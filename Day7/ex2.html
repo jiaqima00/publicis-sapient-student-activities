@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="author" content="Vicky Ma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example2</title>
+</head>
+<body>
+    <script type="text/javascript">
+        //Function and list practice 
+        function Animal(name, age) {
+            this.name = name;
+            this.age = age;
+        }
+
+        let lst = [new Animal("Rocky", 1), new Animal("Max", 2), new Animal("Jax", 4)];
+        for(let i = 0; i < lst.length; i++) {
+            document.write("<p>Name: " + lst[i].name + "   Age: " + lst[i].age + "</p>");
+        }
+    </script>
+</body>
+</html>

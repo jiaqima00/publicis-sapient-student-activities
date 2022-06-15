@@ -1,0 +1,23 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="author" content="Vicky Ma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example6</title>
+</head>
+<body>
+    <canvas id="c1" style="border: 2px solid black" width="400" height="400"></canvas>
+    <script type="text/javascript">
+        let ctx = document.getElementById("c1").getContext("2d");
+        let colors = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "white"];
+        let rad = 90;
+        for(let i = 0; i < 8; i++) {  
+            ctx.beginPath();
+            ctx.arc(200, 200, rad-(i*10), 0, Math.PI, true);
+            ctx.fillStyle = colors[i];
+            ctx.fill();
+        }
+    </script>
+</body>
+</html>

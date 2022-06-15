@@ -1,0 +1,42 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="author" content="Vicky Ma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example3</title>
+</head>
+<body>
+    <input type="text" id="i1">
+    <br><br>
+    <button onclick = "handleClick(event)">Submit</button>
+    <br><br>
+    <div id="i2">Name is: </div>
+    <br><br>
+    <div id="i3">Hello :)</div>
+    <button onclick="handleClick2()">Change Color</button>
+    <br><br>
+
+    <input type="range" min="0" max="100" oninput="handleInput(event)">
+    <span id="s1"></span>
+    <script type="text/javascript">
+        //Events practice 
+        function handleClick(e) {
+            console.log(e);
+            console.log(e.target);
+            let ele = document.getElementById("i1");
+            console.log(ele.value);
+            let ele2 = document.getElementById("i2");
+            ele2.innerHTML = ele2.innerHTML + "<b>" + ele.value + "</b>";
+        }
+        function handleClick2() {
+            let elem = document.getElementById("i3");
+            elem.style.color = "blue";
+        }
+        function handleInput(e) {
+            let rangeBarVal = e.target.value;
+            document.getElementById("s1").innerHTML = rangeBarVal;
+        }
+    </script>
+</body>
+</html>

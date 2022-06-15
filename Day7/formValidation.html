@@ -1,0 +1,81 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="author" content="Vicky Ma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formValidation</title>
+</head>
+<body>
+    <h2>Form Validation</h2> 
+    <hr>
+    <form name="register" action="ex4.html" method="post" onsubmit="return handleSubmit()">
+        Firstname: <input type="text" name="fn"> 
+        <br><br>
+        Lastname: <input type="text" name="ln">
+        <br><br>
+        Gender: 
+        <input type="radio" name="gender" value="Female">
+        <label>Female</label>
+        <input type="radio" name="gender" value="Male">
+        <label>Male</label>
+        <input type="radio" name="gender" value="Nonbinary">
+        <label>Nonbinary</label> 
+        <input type="radio" name="gender" value="Others">
+        <label>Others</label> 
+        <br><br>
+        Password:
+        <input type="password" name="pw">
+        <br><br>
+        Confirm Password:
+        <input type="password" name="pwCon">
+        <br><br>
+        Skills:
+        <input type="checkbox" name="skills" value="Java">
+        <label for="java">Java</label>
+        <input type="checkbox" name="skills" value="C">
+        <label for="C">C</label>
+        <input type="checkbox" name="skills" value="Python">
+        <label for="python">Python</label>
+        <input type="checkbox" name="skills" value="HTML">
+        <label for="html">HTML</label>
+        <br> <br>
+        <input type="submit" value="Register">
+    </form>
+    <script type="text/javascript">
+        function handleSubmit() {
+            let regForm = document.register;
+            let fName = regForm.fn;
+            let lName = regForm.ln;
+            let gen = regForm.gender;
+            let passW = regForm.pw;
+            let passCon = regForm.pwCon;
+            let skillChecked = regForm.skills;
+            let numChecked = 0;
+            for(var i = 0; i < skillChecked.length; i++)  {
+                if(skillChecked[i].checked)  
+                    numChecked++;  
+            }
+
+            if(fName.value.length < 3) {
+                alert("Firstname input is invalid");
+                return false;
+            } else if(lName.value.length < 2) {
+                alert("Lastname input is invalid");
+                return false;
+            } else if(!(gen.value == "Female" || gen.value == "Male" || gen.value == "Nonbinary" || gen.value == "Others")) {
+                alert("Please indicate your gender");
+                return false;
+            } else if(passW.value != passCon.value) {
+                alert("Passwords are not the same");
+                return false;
+            } else if(numChecked == 0) {
+                alert("Please select skills");
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>

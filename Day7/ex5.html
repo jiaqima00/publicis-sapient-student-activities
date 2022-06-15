@@ -1,0 +1,34 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible">
+    <meta name="author" content="Vicky Ma">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>example5</title>
+</head>
+<body>
+    <!--For validation practice-->
+    <h2>Form validation</h2> 
+    <hr>
+    <form name="login" action="ex4.html" method="post" onsubmit="return handleSubmit()">
+        Username: <input type="text" name="username"> 
+        <br><br>
+        Password: <input type="password" name="password">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script type="text/javascript">
+        function handleSubmit() {
+            let loginForm = document.login;
+            let un = loginForm.username;
+            let ps = loginForm.password;
+            if(un.value.length <= 0 || ps.value.length <= 0) {
+                alert("Please enter valid inputs")
+                return false;
+            } else {
+                return true;
+            }
+        }
+    </script>
+</body>
+</html>
